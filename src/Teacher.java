@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
 public class Teacher {
+    protected ArrayList<String> nameCourseTeach = new ArrayList<String>();
     private int id;
     private String name;
-    protected ArrayList<String> nameCourseTeach = new ArrayList<String>();
 
 
-    public Teacher(int id , String name ){
+    public Teacher(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -26,7 +26,6 @@ public class Teacher {
     public void setName(String name) {
         this.name = name;
     }
-
 
 
 }

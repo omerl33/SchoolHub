@@ -1,13 +1,36 @@
-import java.util.*;
+import java.util.ArrayList;
 
 public class Course {
     private String name;
     private ArrayList<Student> studentsInCourse = new ArrayList<Student>();
     private Teacher teacher;
 
-    public Course(String name){
+    public Course(String name) {
         this.name = name;
     }
+
+    public static void main(String[] args) {
+        Student student;
+        Course math = new Course("Math");
+        Course english = new Course("English");
+        Teacher yosi = new Teacher(1, "Yosi");
+        //----assign to course------
+        for (int i = 0; i < 10; i++) {
+            student = new Student(i, "Omer " + i);
+            if (i % 2 == 0) {
+                english.joinTheCourse(student);
+            }
+            math.joinTheCourse(student);
+
+        }
+        math.addATeacher(yosi);
+        english.addATeacher(yosi);
+        math.courseInfo();
+        english.courseInfo();
+
+
+    }
+
     public void joinTheCourse(Student student) {
         if (studentsInCourse.contains(student)) {
 //            System.out.println(student.getName() + " is already in the course.");
@@ -49,30 +72,7 @@ public class Course {
 //        }
     }
 
-    public void addATeacher(Teacher teacher){
+    public void addATeacher(Teacher teacher) {
         this.teacher = teacher;
-    }
-
-
-    public static void main(String[] args) {
-        Student student;
-        Course math = new Course("Math");
-        Course english = new Course("English");
-        Teacher yosi = new Teacher(1 , "Yosi");
-        //----assign to course------
-        for (int i = 0; i < 10; i++) {
-            student = new Student(i , "Omer " + i );
-            if (i%2 == 0){
-                english.joinTheCourse(student);
-            }
-            math.joinTheCourse(student);
-
-        }
-        math.addATeacher(yosi);
-        english.addATeacher(yosi);
-        math.courseInfo();
-        english.courseInfo();
-
-
     }
 }

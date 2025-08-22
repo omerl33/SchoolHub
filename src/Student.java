@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Student {
     private int id;
     private String name;
-     private ArrayList<Course> myCourses = new ArrayList<Course>();
+    private ArrayList<Course> myCourses = new ArrayList<Course>();
 
 
     public Student(int id, String name) {
@@ -27,10 +27,11 @@ public class Student {
         this.id = id;
     }
 
-    public void addMyCourse(Course course){
+    public void addMyCourse(Course course) {
         myCourses.add(course);
     }
-    public void removeMeFromCourse(Course course){
+
+    public void removeMeFromCourse(Course course) {
         myCourses.remove(course);
     }
 }

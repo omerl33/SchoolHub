@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class Teacher {
-    protected ArrayList<String> nameCourseTeach = new ArrayList<String>();
+    protected ArrayList<Course> teacherCourses = new ArrayList<Course>();
     private int id;
     private String name;
 
@@ -27,5 +27,10 @@ public class Teacher {
         this.name = name;
     }
 
-
+    public void addCourse(Course course){
+        teacherCourses.add(course);
+    }
+    public void removeCourse(Course course){
+        teacherCourses.remove(course);
+    }
 }

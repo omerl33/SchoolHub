@@ -1,12 +1,14 @@
+import java.util.ArrayList;
+
 public class Student {
     private int id;
     private String name;
-    private String courseName;
+     private ArrayList<Course> myCourses = new ArrayList<Course>();
 
-    public Student(int id, String name, String courseName) {
+
+    public Student(int id, String name) {
         this.name = name;
         this.id = id;
-        this.courseName = courseName;
     }
 
     public String getName() {
@@ -25,11 +27,10 @@ public class Student {
         this.id = id;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public void addMyCourse(Course course){
+        myCourses.add(course);
     }
-
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void removeMeFromCourse(Course course){
+        myCourses.remove(course);
     }
 }

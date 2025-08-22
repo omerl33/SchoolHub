@@ -34,4 +34,8 @@ public class Student {
     public void removeMeFromCourse(Course course) {
         myCourses.remove(course);
     }
+
+    public int countMyCourses() {
+        return myCourses.size();
+    }
 }

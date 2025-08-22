@@ -34,4 +34,10 @@ public class Teacher {
     public void removeCourse(Course course) {
         teacherCourses.remove(course);
     }
+
+    public void printMyCourses() {
+        for (Course course : teacherCourses) {
+            System.out.println(course.getName());
+        }
+    }
 }

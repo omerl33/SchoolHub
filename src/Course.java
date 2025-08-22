@@ -23,11 +23,15 @@ public class Course {
             math.joinTheCourse(student);
 
         }
-        math.addATeacher(yosi);
-        english.addATeacher(yosi);
+        math.setTeacher(yosi);
+        english.setTeacher(yosi);
         math.courseInfo();
         english.courseInfo();
+        yosi.printMyCourses();
 
+        yosi.setName("Yoseffa");
+
+        math.courseInfo();
 
     }
 
@@ -51,28 +55,29 @@ public class Course {
         }
     }
 
-    public void changeNameCourseTeach(String nameCourse, String nameCourseChange) {
-//        if (teacher.nameCourseTeach.contains(nameCourse)) {
-//            nameCourse = nameCourseChange;
-//        }
-    }
-
     public void courseInfo() {
         System.out.println("course's name: " + this.name);
         System.out.println("Teacher's name: " + teacher.getName());
-        System.out.println("The names of the students are: ");
-        for (Student s : studentsInCourse) {
-            System.out.println(s.getName());
-        }
-    }
-
-    public void printEachCourseTeach() {
-//        for (String s : teacher.nameCourseTeach) {
-//            System.out.println("The name of the courses that the teacher teaching: " + teacher.nameCourseTeach.toString());
+//        System.out.println("The names of the students are: ");
+//        for (Student s : studentsInCourse) {
+//            System.out.println(s.getName());
 //        }
+        System.out.println("The amount of students in course: " + studentsInCourse.size());
+        int countOneCourse = 0;
+        for (Student student : studentsInCourse) {
+            if (student.countMyCourses() == 1) {
+                countOneCourse++;
+            }
+        }
+        System.out.println("The amount of student that have only " + this.name + " : " + countOneCourse);
     }
 
-    public void addATeacher(Teacher teacher) {
+    public void setTeacher(Teacher teacher) {
         this.teacher = teacher;
+        teacher.addCourse(this);
+    }
+
+    public String getName() {
+        return this.name;
     }
 }

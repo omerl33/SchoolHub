@@ -1,30 +1,15 @@
 import java.util.ArrayList;
 
-public class Teacher {
+public class Teacher extends Person {
     protected ArrayList<Course> teacherCourses = new ArrayList<Course>();
-    private int id;
-    private String name;
-
 
     public Teacher(int id, String name) {
-        this.id = id;
-        this.name = name;
+        super(id, name, "teacher");
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public void sayRole() {
+        System.out.println("I am a teacher");
     }
 
     public void addCourse(Course course) {

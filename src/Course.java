@@ -9,31 +9,6 @@ public class Course {
         this.name = name;
     }
 
-    public static void main(String[] args) {
-        Student student;
-        Course math = new Course("Math");
-        Course english = new Course("English");
-        Teacher yosi = new Teacher(1, "Yosi");
-        //----assign to course------
-        for (int i = 0; i < 10; i++) {
-            student = new Student(i, "Omer " + i);
-            if (i % 2 == 0) {
-                english.joinTheCourse(student);
-            }
-            math.joinTheCourse(student);
-
-        }
-        math.setTeacher(yosi);
-        english.setTeacher(yosi);
-        math.courseInfo();
-        english.courseInfo();
-        yosi.printMyCourses();
-
-        yosi.setName("Yoseffa");
-
-        math.courseInfo();
-
-    }
 
     public void joinTheCourse(Student student) {
         if (studentsInCourse.contains(student)) {

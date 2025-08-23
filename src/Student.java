@@ -1,30 +1,15 @@
 import java.util.ArrayList;
 
-public class Student {
-    private int id;
-    private String name;
+public class Student extends Person{
     private ArrayList<Course> myCourses = new ArrayList<Course>();
 
-
     public Student(int id, String name) {
-        this.name = name;
-        this.id = id;
+        super(id, name, "student");
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public void sayRole() {
+        System.out.println("I am a student");
     }
 
     public void addMyCourse(Course course) {
@@ -38,4 +23,6 @@ public class Student {
     public int countMyCourses() {
         return myCourses.size();
     }
+
+
 }
